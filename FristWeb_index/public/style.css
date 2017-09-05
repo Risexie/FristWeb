@@ -1,15 +1,26 @@
 
 .panel {
   background-color:transparent; 
-  border: solid transparent;
-  color:#FFFFFF
+  border: solid transparent
+  color:black
 
 }
 
 .words-pannel {
   margin-top: 10px;
 }
+.jumbotron{
+background-color:transparent; 
+  border: solid transparent;
+ text-align: center;
+ color:#FFFFFF;
+ background: url(https://ws1.sinaimg.cn/large/006tNc79gy1fj3vw0cvfbj31kw11xu15.jpg);
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
+}
 .avatar {
   height: 48px;
   width: 48px;
