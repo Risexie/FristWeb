@@ -11,45 +11,65 @@
         crossorigin="anonymous">
     <script src="./public/vue.min.js"></script>
     <link rel="stylesheet" href="./public/style.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>       
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
+
     <div class="jumbotron">
         <h1>新生大学，JavaScript</h1>
         <p>这里记录着我们的初宗，这是我们的开始，更是我们的回忆</p>
         <p><a class="btn btn-primary btn-lg" href="https://js.xinshengdaxue.com" role="button">主页</a></p>
-        <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#">心里话</a></li>
-            <li role="presentation"><a href="#">组队情况</a></li>
-            <li role="presentation"><a href="#">作业</a></li>
-        </ul>
     </div>
+    <div class="row">
+        <div class="container" id=app>
+            <div class="panel panel-default col-md-4">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Git相关</h3>
+                </div>
+                <div class="panel-body">
+                    <li class="list-group-item list-group-item-x" v-for="item in lessonFor.gitTopiscList ">
+                        <a href="item.url">
+                          {{item.title}}
+                          </a>
+                    </li>
+                </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-8">
-                <div id='app'>
-                    <div class="page-header">
-                        <h1>心里话</h1>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                            </div>
-                            <div class="panel-body">
-                                <div class="words-pannel" v-for="item in wordLists">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">JS技术</h3>
+                    </div>
+                    <div class="panel-body">
+                        <li class="list-group-item list-group-item-x" v-for="item in lessonFor.topicsList">
+                            <a href="item.url">
+                                     {{item.title}}
+                                </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="page-header_right col-md-8">
+                <h1>心里话</h1>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div>
+                    <div class="panel-body">
+                        <div class="words-pannel" v-for="item in wordLists">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
                                         <img class="media-object avatar" v-bind:src="item.avatar" alt="...">
                                     </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                {{ item.name }}
-                                            </h4>
-                                            {{ item.words }}
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        {{ item.name }}
+                                    </h4>
+                                    {{ item.words }}
                                 </div>
                             </div>
                         </div>
@@ -57,7 +77,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
@@ -65,21 +84,37 @@
 
 <script>
     //定义一个空的数组
-var responseList =[]
+    var responseList = []
 
 
 
     axios.get('https://js.xinshengdaxue.com/api/v1/learnJS/course/1/words')
         .then(function (response) {
-        var responseContent = response['data']['words']
-         responseContent.forEach(function(obj){
-             responseList.push(obj)
+            var responseContent = response['data']['words']
+            responseContent.forEach(function (obj) {
+                responseList.push(obj)
 
-        } ,this)
+            }, this)
         })
-        .catch(function (error) { 
+        .catch(function (error) {
             console.log(error);
         });
+
+    axiso.get('https://js.xinshengdaxue.comapi/v1/learnJS/course/1/catelog')
+        .then(function (imfor) {
+            app.lessonImfor = imfor.data.catalog;
+           
+           
+          
+        })
+        .catch(function (error) {
+            console.log(error)  
+        });
+
+
+
+
+
 
 
     // vue官网： https://cn.vuejs.org/v2/guide/
@@ -88,8 +123,15 @@ var responseList =[]
     new Vue({
         el: '#app',   // #app 和html中div#id的 app 对应
         data: {
+        
             wordLists: responseList,
+            lessonImfor:{
+
+                
+            },
+           
+
         }
-    }); 
+    });
 
 </script>
