@@ -15,8 +15,18 @@
 <body>
     <!--表头巨幕-->
     <div class="jumbotron">
-        <h1>新生大学，JavaScript</h1>
-        <p>这里记录着我们的初宗，这是我们的开始，更是我们的回忆</p>
+        <div class="container">
+            <div class="row"> 
+                <div class="col-xs-12">
+                    <div class="logotxt">
+                        <h2>新生大学</h2>
+                    </div>
+                        <h3 class="site-name text-center">
+                            "JavaScritp"
+                        </h3>
+                    </div>
+            </div>
+        </div>                         
         <p><a class="btn btn-primary btn-lg" href="https://js.xinshengdaxue.com" role="button">主页</a></p>
     </div>
 
@@ -31,7 +41,7 @@
                         </div>
                         <div class="panel-body">
                             <li class="list-group-item list-group-item-x" v-for="item in gitList ">
-                                <a href="item.url">
+                                <a v-bind:href="item.url">
                           {{item.title}}
                           </a>
                             </li>
@@ -43,13 +53,26 @@
                         </div>
                         <div class="panel-body">
                             <li class="list-group-item list-group-item-x" v-for="item in topicList">
-                                <a href="item.url">
+                                <a v-bind:href="item.url">
+                                     {{item.title}}
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">PPT文档</h3>
+                        </div>
+                        <div class="panel-body">
+                            <li class="list-group-item list-group-item-x" v-for="item in pptList">
+                                <a v-bind:href="item.url">
                                      {{item.title}}
                                 </a>
                             </li>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- 右边内容-->
                 <div class='col-md-8'>
@@ -91,6 +114,7 @@
             gitList: [],
             topicList: [],
             wordsList: [],
+            pptList:[],
         },
         methods: {
             fetchWordsData: function () {
@@ -115,6 +139,7 @@
                     .then(function (imfor) {
                         app.gitList = imfor.data.catelog.gitTopicsList;
                         app.topicList = imfor.data.catelog.topicsList;
+                        app.pptList = imfor.data.catelog.pptList;
 
                     })
                     .catch(function (error) {

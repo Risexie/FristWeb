@@ -1,24 +1,23 @@
 
 .panel {
   background-color:transparent; 
-  border: solid transparent
-  color:black
-
+  border: solid transparent;
 }
 
 .words-pannel {
   margin-top: 10px;
 }
 .jumbotron{
-background-color:transparent; 
+
   border: solid transparent;
  text-align: center;
- color:#FFFFFF;
- background: url(https://ws1.sinaimg.cn/large/006tNc79gy1fj3vw0cvfbj31kw11xu15.jpg);
+ 
+ background: url(https://ws4.sinaimg.cn/large/006tKfTcgy1fjev3lrytzj31kw11xu15.jpg);
     -moz-background-size: 100% 100%;
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    min-height: 400px
 }
 
 
@@ -41,3 +40,21 @@ text-align :center;
   cursor: default;
   
 }
+
+.jumbotron h2{
+ont-weight: 700;
+    color: #fff;
+    font-size: 64px;
+}
+.jumbotron h3{
+color: #fff;
+    padding: 0;
+    margin: 0 0 45px;
+    font-weight: 100;
+    font-size: 34px;
+}
+
+
+
+
+
