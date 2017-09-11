@@ -1,6 +1,7 @@
 这是一个记录我制作网站进度的md
 ===
 
+网页地址https://risexie.github.io/FristWeb/
 ### 8月30日
 通过修改老师给了sample.js文档，现在搞定了读写josn文档的后端代码，但是代码里面的内容还有很多需要修改。例如jsonfile.readFilesyc,这个函数无法读取嵌套文档里面的json文件。
 
