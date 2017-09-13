@@ -10,98 +10,136 @@
     <link rel="stylesheet" href="./FristWeb_index/public/style.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <!--表头巨幕-->
     <div class="jumbotron">
         <div class="container">
-            <div class="row"> 
+            <div class="row">
                 <div class="col-xs-12">
+                    <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="container">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                        aria-expanded="false">
+                                           <span class="sr-only">Toggle navigation</span>
+                                           <span class="icon-bar"></span>
+                                           <span class="icon-bar"></span>
+                                           <span class="icon-bar"></span>
+                                            </button>
+                                    <a class="navbar-brand" href="https://github.com/Risexie/FristWeb">Github</a>
+                                </div>
+                            </div>
+                    </nav>
                     <div class="logotxt">
                         <h2>新生大学</h2>
                     </div>
-                        <h3 class="site-name text-center">
-                            "JavaScritp"
-                        </h3>
-                    </div>
-            </div>
-        </div>                         
-        <p><a class="btn btn-primary btn-lg" href="https://js.xinshengdaxue.com" role="button">主页</a></p>
-    </div>
-
-    <div class="container">
-        <div id='app'>
-            <div class="row ">
-                <div class='col-md-4'>
-                    <!-- 左边内容-->
-                    <div class="panel panel-default ">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Git相关</h3>
-                        </div>
-                        <div class="panel-body">
-                            <li class="list-group-item list-group-item-x" v-for="item in gitList ">
-                                <a v-bind:href="item.url">
-                          {{item.title}}
-                          </a>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="panel panel-default ">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">JS技术</h3>
-                        </div>
-                        <div class="panel-body">
-                            <li class="list-group-item list-group-item-x" v-for="item in topicList">
-                                <a v-bind:href="item.url">
-                                     {{item.title}}
-                                </a>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="panel panel-default ">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">PPT文档</h3>
-                        </div>
-                        <div class="panel-body">
-                            <li class="list-group-item list-group-item-x" v-for="item in pptList">
-                                <a v-bind:href="item.url">
-                                     {{item.title}}
-                                </a>
-                            </li>
-                        </div>
+                    <h3 class="site-name text-center">
+                        "JavaScritp"
+                    </h3>
                     </div>
                 </div>
+            </div>
+            <p><a class="btn btn-primary btn-lg" href="https://js.xinshengdaxue.com" role="button">主页</a></p>
+        </div>
+
+        <div class="container">
+            <div id='app'>
+                <div class="row ">
+                    <div class='col-md-8'>
+                        <!---->
+                        <div>
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#Git" aria-controls="Git" role="tab" data-toggle="tab">git</a></li>
+                                <li role="presentation"><a href="#JS" aria-controls="JS" role="tab" data-toggle="tab">JS</a></li>
+                                <li role="presentation"><a href="#PPT" aria-controls="PPT" role="tab" data-toggle="tab">ppt</a></li>
+                                <li role="presentation"><a href="#心里话" aria-controls="心里话" role="tab" data-toggle="tab">心里话</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="Git">
+                                    <div class="panel panel-primary ">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Git相关</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <li class="list-group-item list-group-item-x" v-for="item in gitList ">
+                                                <a v-bind:href="item.url">
+                                                   {{item.title}}
+                                                 </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="JS">
+
+                                    <div class="panel panel-primary ">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">JS技术</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <li class="list-group-item list-group-item-x" v-for="item in topicList">
+                                                <a v-bind:href="item.url">
+                                     {{item.title}}
+                                      </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="PPT">
+
+                                    <div class="panel panel-primary ">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">PPT文档</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <li class="list-group-item list-group-item-x" v-for="item in pptList">
+                                                <a v-bind:href="item.url">
+                                     {{item.title}}
+                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                <!-- 右边内容-->
-                <div class='col-md-8'>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">心里话</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="words-pannel" v-for="item in wordsList">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#">
+
+                                <div role="tabpanel" class="tab-pane fade" id="心里话">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">心里话</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="words-pannel" v-for="item in wordsList">
+                                                <div class="media">
+                                                    <div class="media-left">
+                                                        <a href="#">
                                         <img class="media-object avatar" v-bind:src="item.avatar" alt="...">
                                     </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">
-                                            {{ item.name }}
-                                        </h4>
-                                        {{ item.words }}
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h4 class="media-heading">
+                                                            {{ item.name }}
+                                                        </h4>
+                                                        {{ item.words }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
@@ -114,7 +152,7 @@
             gitList: [],
             topicList: [],
             wordsList: [],
-            pptList:[],
+            pptList: [],
         },
         methods: {
             fetchWordsData: function () {
